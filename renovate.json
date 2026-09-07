@@ -22,9 +22,12 @@
         "docker"
       ],
       "matchPackageNames": [
-        "node"
+        "/(?:^|/)node$/"
       ],
-      "allowedVersions": "/^22\\./"
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": false
     },
     {
       "description": "Keep pnpm on v11",
