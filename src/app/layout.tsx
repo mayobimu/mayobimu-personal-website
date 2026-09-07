@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "@fontsource-variable/noto-sans-jp";
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ja">
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-G712E8EFMF" />
     </html>
   );
 }

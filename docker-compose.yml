@@ -8,4 +8,5 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/.pnpm-store
     command: pnpm dev
