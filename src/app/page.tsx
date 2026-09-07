@@ -96,9 +96,7 @@ export default function Home() {
                   <div>
                     <h3>Career</h3>
                     <p>
-                      これまでの経歴や仕事については、
-                      <br />
-                      Wantedlyにまとめています。
+                      これまでの経歴や仕事については、Wantedlyにまとめています。
                     </p>
                   </div>
                 </div>
@@ -171,17 +169,22 @@ export default function Home() {
                 <p className="card-label">mayobimu Personal Website</p>
                 <h3>mayobimu.com</h3>
                 <p>
-                  自分の活動をまとめたポートフォリオサイトです。
+                  自分の活動をまとめる個人サイトです。
                 </p>
                 <ul className="tags" aria-label="使用技術">
                   <li>Next.js</li>
                   <li>TypeScript</li>
                   <li>Tailwind CSS</li>
-                  <li>AWS</li>
+                  <li>S3 / CloudFront</li>
                 </ul>
-                <ArrowLink href={`${siteLinks.github}/mayobimu-personal-website`}>
-                  View on GitHub
-                </ArrowLink>
+                <div className="flex flex-wrap items-center gap-x-7 gap-y-3">
+                  <ArrowLink href={`${siteLinks.github}/mayobimu-personal-website`}>
+                    View on GitHub
+                  </ArrowLink>
+                  <ArrowLink href="https://zenn.dev/mayobimu/articles/78c90d0b5bfb4a">
+                    Read on Zenn
+                  </ArrowLink>
+                </div>
               </div>
             </article>
 

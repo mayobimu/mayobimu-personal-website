@@ -7,6 +7,25 @@
 html {
   scroll-behavior: smooth;
 }
+#about,
+#writing,
+#projects {
+  scroll-margin-top: 76px;
+}
+@media (max-width: 800px) {
+  #about,
+  #writing,
+  #projects {
+    /* Header (76px) + gap (16px) - section padding (70px). */
+    scroll-margin-top: 22px;
+  }
+}
+@media (max-width: 480px) {
+  #about {
+    /* About uses 54px of section padding on small screens. */
+    scroll-margin-top: 38px;
+  }
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -82,9 +101,6 @@ nav a:hover,
   .hero-visual {
     min-height: 370px;
   }
-  section:not(.hero) {
-    padding: 80px 0;
-  }
   .about-grid,
   .cards,
   .project-card {
@@ -93,14 +109,8 @@ nav a:hover,
   .about-grid {
     gap: 48px;
   }
-  .project-card {
-    gap: 15px;
-    padding: 32px;
-  }
   .footer-inner {
-    padding: 50px 0;
     align-items: flex-start;
-    gap: 36px;
     flex-direction: column;
   }
   .footer-links {
@@ -117,9 +127,6 @@ nav a:hover,
   h1 {
     font-size: 42px;
   }
-  .hero {
-    padding-top: 44px;
-  }
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
@@ -129,12 +136,6 @@ nav a:hover,
   }
   h2 {
     font-size: 35px;
-  }
-  .card {
-    padding: 32px;
-  }
-  .card-links {
-    left: 32px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -516,12 +517,15 @@ h2 {
 }
 .about-copy {
   max-width: 650px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.88;
 }
 .about-copy p {
-  margin: 0 0 18px;
   text-wrap: pretty;
+}
+.about-copy > p {
+  margin: 0 0 18px;
+  text-wrap: wrap;
 }
 .about-copy > p,
 .about-copy > blockquote {
@@ -688,7 +692,7 @@ blockquote {
 .project-copy p {
   color: #566079;
   line-height: 1.75;
-  font-size: 12px;
+  font-size: 14px;
 }
 .card-links {
   display: flex;
@@ -772,12 +776,14 @@ blockquote {
 .career-summary p {
   margin: 0;
   color: #566079;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.65;
 }
 .career-link {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
+  padding-block: 8px;
   gap: 10px;
   color: var(--pink);
   font-size: 13px;
@@ -832,6 +838,7 @@ blockquote {
 }
 .project-copy .card-label {
   color: var(--pink);
+  margin-bottom: 6px;
 }
 .project-copy h3 {
   margin-bottom: 8px;
@@ -841,7 +848,13 @@ blockquote {
 }
 .project-copy .arrow-link {
   color: var(--pink);
-  font-size: 12px;
+  font-size: 13px;
+  min-height: 44px;
+  padding-block: 8px;
+}
+.project-copy .tags {
+  margin: 0;
+  padding: 12px 0 14px;
 }
 .coming-soon-card {
   display: flex;
@@ -879,7 +892,7 @@ blockquote {
   border-radius: 999px;
   background: #f6dfe8;
   color: #a15b78;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 /* Footer */
@@ -909,6 +922,22 @@ footer {
   color: #716d88;
   font-size: 11px;
   white-space: nowrap;
+}
+@media (max-width: 1100px) {
+  .career-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .career-link {
+    padding-left: 35px;
+    white-space: normal;
+  }
+  .project-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .coming-soon-card {
+    min-height: 170px;
+  }
 }
 @media (max-width: 900px) {
   .cards {
@@ -940,17 +969,20 @@ footer {
   }
 }
 @media (max-width: 600px) {
-  .career-card {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 18px;
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
   }
-  .career-link {
-    padding-left: 35px;
+  .project-preview-icon {
+    width: 145px;
+    justify-self: center;
+  }
+  .career-card {
+    padding: 18px;
   }
 }
 @media (max-width: 480px) {
-  .about {
+  .about.section-shell {
     padding-block: 54px;
   }
   .about .section-heading {
@@ -959,7 +991,7 @@ footer {
   .about-grid {
     gap: 28px;
   }
-  .about-copy p {
+  .about-copy > p {
     margin-bottom: 14px;
   }
   .about-copy > p br {
@@ -972,15 +1004,13 @@ footer {
     min-height: 270px;
   }
   .project-card {
-    grid-template-columns: 1fr;
-    padding: 26px;
-  }
-  .project-preview-icon {
-    width: 145px;
-    justify-self: center;
+    padding: 24px;
   }
   .project-copy .card-label {
-    font-size: 15px;
+    font-size: 13px;
+  }
+  .project-copy .tags li {
+    padding: 6px 10px;
   }
 }
 /* Sticky header and back-to-top control */
