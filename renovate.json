@@ -2,5 +2,33 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    "before 9am on monday"
+  ],
+  "packageRules": [
+    {
+      "description": "Group non-major dependency updates",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "non-major dependencies"
+    },
+    {
+      "description": "Keep Node.js on v22",
+      "matchPackageNames": [
+        "node"
+      ],
+      "allowedVersions": "22"
+    },
+    {
+      "description": "Keep pnpm on v11",
+      "matchPackageNames": [
+        "pnpm"
+      ],
+      "allowedVersions": "11"
+    }
   ]
 }
