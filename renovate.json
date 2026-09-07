@@ -18,10 +18,13 @@
     },
     {
       "description": "Keep Node.js on v22",
+      "matchDatasources": [
+        "docker"
+      ],
       "matchPackageNames": [
         "node"
       ],
-      "allowedVersions": "22"
+      "allowedVersions": "/^22\\./"
     },
     {
       "description": "Keep pnpm on v11",
