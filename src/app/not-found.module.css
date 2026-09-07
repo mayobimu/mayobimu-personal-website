@@ -1,0 +1,56 @@
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.code {
+  margin: 0;
+  color: var(--pink);
+  font-size: clamp(64px, 12vw, 96px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cat {
+  width: 88px;
+  height: 100px;
+  object-fit: contain;
+  margin: 12px 0 24px;
+}
+
+.heading {
+  font-size: clamp(20px, 4vw, 26px);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.description {
+  max-width: 520px;
+  margin: 16px 0 24px;
+  color: #566079;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.link {
+  width: auto;
+  min-height: 44px;
+  gap: 20px;
+}
+
+@media (max-width: 480px) {
+  .description br {
+    display: none;
+  }
+}
