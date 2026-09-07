@@ -17,12 +17,10 @@
       "groupName": "non-major dependencies"
     },
     {
-      "description": "Keep Node.js on v22",
-      "matchDatasources": [
-        "docker"
-      ],
+      "description": "Keep Node.js ecosystem on v22",
       "matchPackageNames": [
-        "/(?:^|/)node$/"
+        "node",
+        "@types/node"
       ],
       "matchUpdateTypes": [
         "major"
